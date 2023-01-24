@@ -1,4 +1,5 @@
 apply from: "$rootProject.projectDir/android-library.gradle"
+apply plugin: 'maven-publish'
 
 android {
 
@@ -7,7 +8,7 @@ android {
     defaultConfig {
         externalNativeBuild {
             cmake {
-                abiFilters 'armeabi-v7a', "arm64-v8a", "x86",  "x86_64"
+                abiFilters 'armeabi-v7a', "arm64-v8a", "x86", "x86_64"
                 arguments '-DANDROID_STL=c++_shared'
             }
         }
@@ -21,7 +22,21 @@ android {
     resourcePrefix "wocr_"
 }
 
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.davidvarosyan'
+                artifactId = 'card-scanner'
+                version = '1.0.0'
+            }
+        }
+    }
+}
+
+
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'androidx.appcompat:appcompat:1.6.0'
     implementation "com.facebook.device.yearclass:yearclass:2.1.0"
 }
