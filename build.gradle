@@ -1,0 +1,111 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.versions = ['compileSdk': 33,
+                    'minSdk'    : 24,
+                    'targetSdk' : 33]
+
+    ext.names = ['applicationId': 'com.fastcredit.fcbank']
+
+    ext {
+        //gradle
+        gradle_version = '7.1.2'
+
+        //epoxy
+        epoxy_version = '3.1.0'
+
+        //butterknife
+        butterknife_version = '10.0.0'
+
+        //glide
+        glide_version = '4.13.1'
+
+        //firestore
+        firestore_version = '24.1.0'
+
+        //timber
+        timber_version = '5.0.1'
+
+        //retrofit
+        retrofit_version = '2.9.0'
+        retrofit_converter_version = '2.9.0'
+
+        //okhttp
+        okhttp_interceptor_version = '5.0.0-alpha.7'
+
+        //gson
+        gson_version = '2.9.0'
+
+        //mock
+        mockk_version = '1.12.3'
+
+        //android_navigation
+        android_arch_navigation_version = '1.0.0'
+
+        //androidx
+        androidx_core_testing_version = '2.1.0'
+        androidx_appcompat_version = '1.6.0'
+        androidx_recyclerview_version = '1.2.1'
+        androidx_contraintlayout_version = '2.1.3'
+        androidx_activity_version = '1.4.0'
+        android_material_version = '1.7.0'
+        androidx_testrunner_version = '1.1.0'
+        androidx_junit_version = '1.1.3'
+        androidx_espresso_core_version = '3.4.0'
+        androidx_lifecycle_version = '2.5.1'
+        androidx_lifecycle_extensions_version = '2.2.0'
+        androidx_datastore_version = '1.0.0'
+        androidx_legacy_support_version = '1.0.0'
+
+        //android play
+        android_play_core_version = '1.10.3'
+
+        //kotlin
+        coroutines_kotlin_version = '1.6.3'
+        coroutines_test_version = '1.6.1'
+        kotlin_version = '1.6.10'
+        kotlin_core_version = '1.9.0'
+        kotlin_serialization_version = '1.3.2'
+
+        //google
+        google_truth_version = '1.1.3'
+        //junit
+        junit_version = '4.13.2'
+        //turbine
+        turbine_version = '0.7.0'
+
+        //koin
+        koin_version = '3.0.1'
+
+        //swiperefreshlayout
+        swiperefreshlayout_version = '1.1.0'
+
+        //lottie animations version
+        lottie_version = '5.0.3'
+
+        //android svg
+        svg_version = '1.4'
+
+        // Circle ImageView
+        circle_image_view_bersion = '3.1.0'
+
+        fragment = '1.5.5'
+
+        androidx_biometric = '1.2.0-alpha05'
+
+        viewpager2 = '1.0.0'
+
+        draganddrop = '1.0.0'
+
+        google_map_version = '18.1.0'
+        goole_location_version = '21.0.1'
+
+        biometric_version = '1.1.0'
+    }
+}
+
+plugins {
+    id 'com.android.application' version '7.3.0' apply false
+    id 'com.android.library' version '7.3.0' apply false
+    id 'org.jetbrains.kotlin.android' version '1.7.10' apply false
+}
