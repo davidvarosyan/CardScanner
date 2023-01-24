@@ -2,7 +2,6 @@ apply from: "$rootProject.projectDir/android-library.gradle"
 apply plugin: 'maven-publish'
 
 android {
-
     namespace 'com.fastcredit.fcbank.scanner'
 
     defaultConfig {
@@ -20,21 +19,28 @@ android {
     }
 
     resourcePrefix "wocr_"
-}
 
-afterEvaluate {
     publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-                groupId = 'com.github.davidvarosyan'
-                artifactId = 'card-scanner'
-                version = '1.0.0'
-            }
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
         }
     }
 }
 
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.github.davidvarosyan'
+            artifactId = 'card-scanner'
+            version = '1.0.1'
+
+            afterEvaluate {
+                from components.release
+            }
+        }
+    }
+}
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.0'
